@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build Java App') {
             steps {
-                dir('java-app') {
+                dir('hello-world-ci/java-app') {
                     sh 'javac HelloWorld.java'
                     sh 'java HelloWorld'
                 }
@@ -13,7 +13,7 @@ pipeline {
 
         stage('Install Node Dependencies') {
             steps {
-                dir('node-app') {
+                dir('hello-world-ci/node-app') {
                     sh 'npm init -y'
                     sh 'npm install'
                     sh 'node app.js'
